@@ -89,3 +89,4 @@ Follow this guide - https://support.google.com/mail/answer/185833 - to enable 2F
 
 👨‍💻 Author
 Built by Alish Jain
+https://www.linkedin.com/in/alishjain0102/
