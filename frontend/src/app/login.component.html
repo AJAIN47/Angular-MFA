@@ -1,0 +1,22 @@
+<form *ngIf="!isOtpStep" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+  <label>Email:</label>
+  <input formControlName="email" type="email" />
+  <label>Password:</label>
+  <input formControlName="password" type="password" />
+  <div class="error-message">{{ errorMessage }}</div>
+  <button type="submit">Login</button>
+  <div class="navigation-link">
+    <p>Don't have an account? 
+      <a routerLink="/register">Register</a>
+    </p>
+  </div>
+</form>
+
+<!-- OTP Form -->
+<form *ngIf="isOtpStep" [formGroup]="otpForm" (ngSubmit)="onSubmitOtp()">
+  <label>Enter OTP:</label>
+  <input formControlName="otp" type="text" />
+  <div class="error-message">{{ otpError }}</div>
+  <div class="otp-timer">Time remaining: {{ displayTime }}</div>
+  <button type="submit" [disabled]="timer <= 0">Verify OTP</button>
+</form>

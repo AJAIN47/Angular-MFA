@@ -1,0 +1,19 @@
+<div class="container">
+  <h2>Register</h2>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input formControlName="email" placeholder="Email" />
+    <input formControlName="password" type="password" placeholder="Password" />
+    <button type="submit">Register</button>
+  </form>
+  <div class="navigation-link">
+    <p>Already have an account? 
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+  <div *ngIf="successMessage" style="color: #1db954;">
+    {{ successMessage }}
+  </div>
+  <div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+</div>
